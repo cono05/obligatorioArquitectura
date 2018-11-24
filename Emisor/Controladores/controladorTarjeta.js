@@ -1,11 +1,16 @@
 const Tarjeta = require('../Modelos/tarjeta');
 
+exports.test = function(req, res){
+    res.send("ControladorTarjeta saluda desde app Emisor");
+}
+
 exports.emitirTarjeta = function(req, res){
     let tarjeta = new Tarjeta({
-        numeroDeCuenta: req.body.numeroDeCuenta,
+        numeroDeCuentaPrincipal: req.body.numeroDeCuenta,
         nombreTitularDeTarjeta: req.body.nombreTitularDeTarjeta,
         mesVencimiento: req.body.mesVencimiento,
-        anioVencimiento: req.body.anioVencimiento
+        anioVencimiento: req.body.anioVencimiento,
+        saldoActual: req.body.saldoActual
     });
     tarjeta.save(function(err){
     if(err){

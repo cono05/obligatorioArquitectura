@@ -7,11 +7,11 @@ mongoose.connect(mongoDB , { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-const cuenta = require('./Rutas/cuentaRuta');
+const tarjeta = require('./Rutas/tarjetaRuta');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/cuentas' , cuenta);
+app.use('/tarjetas' , tarjeta);
 
 let puerto = 3003;
 
