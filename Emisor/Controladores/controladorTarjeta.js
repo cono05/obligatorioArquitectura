@@ -10,7 +10,8 @@ exports.emitirTarjeta = function(req, res){
         nombreTitularDeTarjeta: req.body.nombreTitularDeTarjeta,
         mesVencimiento: req.body.mesVencimiento,
         anioVencimiento: req.body.anioVencimiento,
-        saldoActual: req.body.saldoActual
+        saldoActual: req.body.saldoActual,
+        limiteDeCredito: req.body.limiteDeCredito
     });
     tarjeta.save(function(err){
     if(err){
