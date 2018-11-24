@@ -7,4 +7,6 @@ const controlador_compra = require('../controladores/controladorCompra');
 // a simple test url to check that all of our files are communicating correctly.
 router.get('/testPuerto' , controlador_compra.test);
 
-router.post('crear' , controlador_compra.crearCompra)
+router.post('/crear' , controlador_compra.crearCompra)
+
+module.exports = router;

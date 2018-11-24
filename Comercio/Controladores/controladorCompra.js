@@ -7,7 +7,7 @@ exports.test = function(req, res){
 
 exports.crearCompra = function(req, res){
     let compra = new Compra({
-        id: mongoose.Schema.Types.ObjectId,
+        //id: mongoose.Schema.Types.ObjectId,
         calleEnvio: req.body.calleEnvio,
         numeroDePuertaEnvio: req.body.numeroDePuertaEnvio,
         ciudadEnvio: req.body.ciudadEnvio,

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const compraSchema = mongoose.Schema({
-    id: mongoose.Schema.Types.ObjectId,
+    //id: mongoose.Schema.Types.ObjectId,
     calleEnvio: {type: String, required: true},
     numeroDePuertaEnvio: {type: String, required: true},
     ciudadEnvio: {type: String, required: true},
@@ -17,4 +17,4 @@ const compraSchema = mongoose.Schema({
     categoria: String,   
 });
 
-module.exports = mongoose.model('People', peopleSchema);
+module.exports = mongoose.model('Compra', compraSchema);

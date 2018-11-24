@@ -9,9 +9,11 @@ mongoose.connect(mongoDB , { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+const compra = require('./Rutas/compra.ruta');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use('/compras' , compra);
 
 let port = 3000;
 app.listen(port, ()=>{
