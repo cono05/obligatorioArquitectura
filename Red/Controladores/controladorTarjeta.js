@@ -1,10 +1,10 @@
 const Tarjeta = require('../Modelos/tarjeta');
 
 exports.test = function(req, res){
-    res.send("ControladorTarjeta saluda desde app Emisor");
+    res.send("ControladorTarjeta saluda desde app Red");
 }
 
-exports.emitirTarjeta = function(req, res){
+exports.registrarTarjeta = function(req, res){
     let tarjeta = new Tarjeta({
         numeroDeCuentaPrincipal: req.body.numeroDeCuentaPrincipal,
         nombreTitularDeTarjeta: req.body.nombreTitularDeTarjeta,
@@ -28,13 +28,4 @@ exports.obtenerDetallesTarjeta = function(req, res) {
         }
         res.send(tarjeta);
     })
-}
-
-exports.modificarSaldoDeTarjeta = function(req, err, res){
-    let tarjeta = Tarjeta.findById(req.params.id);
-    if(err){
-        return next(err)
-    } 
-    tarjeta.saldoActual = tarjeta.saldoActual - req.body.monto;
-    res.send('Saldo de tarjeta modificado correctamente')
 }
