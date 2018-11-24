@@ -6,7 +6,7 @@ exports.test = function(req, res){
 
 exports.emitirTarjeta = function(req, res){
     let tarjeta = new Tarjeta({
-        numeroDeCuentaPrincipal: req.body.numeroDeCuenta,
+        numeroDeCuentaPrincipal: req.body.numeroDeCuentaPrincipal,
         nombreTitularDeTarjeta: req.body.nombreTitularDeTarjeta,
         mesVencimiento: req.body.mesVencimiento,
         anioVencimiento: req.body.anioVencimiento,
