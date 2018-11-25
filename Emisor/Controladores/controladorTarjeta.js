@@ -1,4 +1,24 @@
 const Tarjeta = require('../Modelos/tarjeta');
+//const Transaccion = require('../Modelos/transaccion');
+
+exports.registrarTransaccion = function(req, res){
+    let transaccion = new Transaccion(
+        {
+            idTarjeta: req.body.Tarjeta.idTarjeta,
+            dia: req.body.dia,
+            mes: req.body.mes,
+            anio: req.body.anio,
+            monto: req.body.monto,
+            nombreProducto: req.body.nombreProducto
+        }
+    );
+    transaccion.save(function(err){
+        if(err){
+            res.send('Error al registrar transaccion')
+        }
+        res.send('Transaccion registrada correctamente');
+        })
+}
 
 exports.test = function(req, res){
     res.send("ControladorTarjeta saluda desde app Emisor");

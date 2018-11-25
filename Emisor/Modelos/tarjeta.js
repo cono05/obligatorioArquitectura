@@ -6,7 +6,13 @@ const tarjetaSchema = mongoose.Schema({
     mesVencimiento: {type: String, required: true},
     anioVencimiento: {type: String, required: true},
     saldoActual: {type: String, required: true},
-    limiteDeCredito: {type: String, required: true}
+    limiteDeCredito: {type: String, required: true},
+    transacciones: [{
+        idTransaccion : String,
+        dia : String,
+        mes: String,
+        anio: String
+    }]
 })
 
 module.exports = mongoose.model('Tarjeta', tarjetaSchema);
