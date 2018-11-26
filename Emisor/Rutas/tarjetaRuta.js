@@ -14,6 +14,8 @@ router.post('/emitirTarjeta' , controladorTarjeta.emitirTarjeta);
 
 router.get('/:id' , controladorTarjeta.obtenerDetallesTarjeta);
 
+router.put('/:id/modificarSaldo' , controladorTarjeta.modificarSaldoDeTarjeta );
+
 
 
 

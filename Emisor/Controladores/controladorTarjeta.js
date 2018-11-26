@@ -1,24 +1,4 @@
 const Tarjeta = require('../Modelos/tarjeta');
-//const Transaccion = require('../Modelos/transaccion');
-
-exports.registrarTransaccion = function(req, res){
-    let transaccion = new Transaccion(
-        {
-            idTarjeta: req.body.Tarjeta.idTarjeta,
-            dia: req.body.dia,
-            mes: req.body.mes,
-            anio: req.body.anio,
-            monto: req.body.monto,
-            nombreProducto: req.body.nombreProducto
-        }
-    );
-    transaccion.save(function(err){
-        if(err){
-            res.send('Error al registrar transaccion')
-        }
-        res.send('Transaccion registrada correctamente');
-        })
-}
 
 exports.test = function(req, res){
     res.send("ControladorTarjeta saluda desde app Emisor");
@@ -50,11 +30,16 @@ exports.obtenerDetallesTarjeta = function(req, res) {
     })
 }
 
-exports.modificarSaldoDeTarjeta = function(req, err, res){
-    let tarjeta = Tarjeta.findById(req.params.id);
-    if(err){
-        return next(err)
-    } 
-    tarjeta.saldoActual = tarjeta.saldoActual - req.body.monto;
-    res.send('Saldo de tarjeta modificado correctamente')
+exports.modificarSaldoDeTarjeta = function(req, res){
+    Tarjeta.findById(req.params.id, function(err, tarjeta){
+        let x = tarjeta.saldoActual - req.body.monto;
+        if(tarjeta.saldoActual - req.body.monto > 0){
+            console.log('saldo suficiente :' + x);
+        }
+        console.log('saldo de tarjeta :' + tarjeta.saldoActual);
+        if(err){
+            res.send('Error al intentar modificar saldo')
+        }
+        res.send(tarjeta);
+    })    
 }
