@@ -7,6 +7,7 @@ const controladorTransaccion = require('../Controladores/controladorTransaccion'
 router.get('/test' , controladorTarjeta.test);
 
 router.post('/emitirTarjeta' , controladorTarjeta.emitirTarjeta);
+router.post('/:id/agregarTransaccion' , controladorTarjeta.agregarTransaccionEnTarjeta );
 
 //router.post('/registrarTransaccion', controladorTarjeta.registrarTransaccion);
 
@@ -14,11 +15,7 @@ router.post('/emitirTarjeta' , controladorTarjeta.emitirTarjeta);
 
 router.get('/:id' , controladorTarjeta.obtenerDetallesTarjeta);
 
-router.put('/:id/modificarSaldo' , controladorTarjeta.modificarSaldoDeTarjeta );
-
-
-
-
+//router.put('/:id/modificarSaldo' , controladorTarjeta.modificarSaldoDeTarjeta );
 
 module.exports = router;
 

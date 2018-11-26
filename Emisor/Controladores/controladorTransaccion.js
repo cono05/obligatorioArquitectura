@@ -13,8 +13,9 @@ exports.registrarTransaccion = function(req, res){
     );
     transaccion.save(function(err){
         if(err){
-            res.send('Error al registrar transaccion')
+           // console.log('entro en el error');
+            res.status(200).send("No hay productos");
         }
-        res.send('Transaccion registrada correctamente');
-        })
+        res.send(transaccion);
+    })
 }

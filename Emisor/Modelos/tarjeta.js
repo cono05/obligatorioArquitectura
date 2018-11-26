@@ -5,13 +5,13 @@ const tarjetaSchema = mongoose.Schema({
     nombreTitularDeTarjeta: {type: String, required: true},
     mesVencimiento: {type: String, required: true},
     anioVencimiento: {type: String, required: true},
-    saldoActual: {type: String, required: true},
-    limiteDeCredito: {type: String, required: true},
+    saldoActual: {type: Number, required: true},
+    limiteDeCredito: {type: Number, required: true},
     transacciones: [{
         idTransaccion : String,
         dia : String,
         mes: String,
-        anio: String
+        anio: String      
     }]
 })
 
