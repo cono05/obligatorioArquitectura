@@ -4,6 +4,6 @@ const controladorTransaccion = require('../Controladores/controladorTransaccion'
 
 router.post('/registrarTransaccion' , controladorTransaccion.registrarTransaccion);
 
-router.get('/:idComercio/transacciones' , controladorTransaccion.obtenerTransaccionesDeComercio);
+router.get('/transaccionesComercio' , controladorTransaccion.obtenerTransaccionesDeComercio);
 
 module.exports = router;

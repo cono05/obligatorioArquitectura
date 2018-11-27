@@ -47,7 +47,7 @@ exports.agregarTransaccionEnTarjeta = function(req, res){
             }
         })  
         tarjeta.save(err2 => {
-            res.status(200).send("transaccion agregada en tarjeta");
+            res.status(200).send("transaccion agregada en tarjeta correctamente");
         })             
     })    
 }

@@ -5,6 +5,7 @@ exports.test = function(req, res){
 }
 
 exports.registrarTarjeta = function(req, res){
+    
     let tarjeta = new Tarjeta({
         numeroDeCuentaPrincipal: req.body.numeroDeCuentaPrincipal,
         nombreTitularDeTarjeta: req.body.nombreTitularDeTarjeta,
