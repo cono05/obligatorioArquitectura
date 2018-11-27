@@ -22,7 +22,8 @@ exports.emitirTarjeta = function(req, res){
         return next(err)
     }
     
-    request.post()
+    //request.post() aca hacer el reques.pos a la red para que registre en el emisor la tarjeta,
+    //para eso tengo q tener en la red una bd con los emisores y cada emisor con sus tarjetas
 
     res.send('Tarjeta emitida correctamente')
     })

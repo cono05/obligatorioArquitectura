@@ -6,6 +6,7 @@ exports.test = function(req, res){
 };
 
 exports.crearCompra = function(req, res){
+    
     let compra = new Compra({
         //id: mongoose.Schema.Types.ObjectId,
         calleEnvio: req.body.calleEnvio,
@@ -26,5 +27,6 @@ exports.crearCompra = function(req, res){
             return next(err)
         }
         res.send('Compra almacenada correctamente')
+
     })
 };
