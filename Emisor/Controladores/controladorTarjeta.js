@@ -1,5 +1,6 @@
 const Tarjeta = require('../Modelos/tarjeta');
 const Transaccion = require('../Modelos/transaccion');
+const request = require('request');
 exports.test = function(req, res){
     res.send("ControladorTarjeta saluda desde app Emisor");
 }
@@ -14,11 +15,18 @@ exports.emitirTarjeta = function(req, res){
         limiteDeCredito: req.body.limiteDeCredito
     });
     tarjeta.save(function(err){
+    
+    
+
     if(err){
         return next(err)
     }
+    
+    request.post()
+
     res.send('Tarjeta emitida correctamente')
     })
+    
 }
 
 exports.obtenerDetallesTarjeta = function(req, res) {

@@ -5,14 +5,19 @@ exports.test = function(req, res){
 }
 
 exports.registrarTarjeta = function(req, res){
-    
     let tarjeta = new Tarjeta({
         numeroDeCuentaPrincipal: req.body.numeroDeCuentaPrincipal,
         nombreTitularDeTarjeta: req.body.nombreTitularDeTarjeta,
         mesVencimiento: req.body.mesVencimiento,
         anioVencimiento: req.body.anioVencimiento,
         saldoActual: req.body.saldoActual,
-        limiteDeCredito: req.body.limiteDeCredito
+        limiteDeCredito: req.body.limiteDeCredito,
+        transacciones: [{
+            idTransaccion : String,
+            dia : String,
+            mes: String,
+            anio: String      
+        }]
     });
     tarjeta.save(function(err){
     if(err){
