@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const tarjetaSchema = mongoose.Schema({
-    numeroDeCuentaPrincipal:{type:String, required: true},
+    numeroDeCuentaPrincipal:{type:String, required: true},//Hay que encriptar
     nombreTitularDeTarjeta: {type: String, required: true},
     mesVencimiento: {type: String, required: true},
     anioVencimiento: {type: String, required: true},

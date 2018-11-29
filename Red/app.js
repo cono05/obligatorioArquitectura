@@ -9,10 +9,12 @@ mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const tarjeta = require('./Rutas/tarjetaRuta');
+const emisor = require('./Rutas/emisorRuta');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/tarjetas' , tarjeta);
+app.use('/emisor' , emisor);
 
 let puerto = 3002;
 

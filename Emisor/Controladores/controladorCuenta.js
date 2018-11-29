@@ -9,7 +9,6 @@ exports.crearCuenta = function(req, res){
     let cuenta = new Cuenta({
         nombreTitular: req.body.nombreTitular,
         saldo: req.body.saldo,
-        numeroSucursal: req.body.numeroSucursal,
         numeroCuenta: req.body.numeroCuenta
     });
     cuenta.save(function(err){

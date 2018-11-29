@@ -9,4 +9,6 @@ router.get('/testPuerto' , controlador_compra.test);
 
 router.post('/crear' , controlador_compra.crearCompra)
 
+//router.get('/test' , controlador_compra.algo);
+
 module.exports = router;

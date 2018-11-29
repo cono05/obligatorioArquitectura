@@ -1,6 +1,10 @@
 const Transaccion = require('../Modelos/transaccion');
 
+exports.test = function(req, res){
+    console.log('llamada recibida');
+}
 exports.registrarTransaccion = function(req, res){
+    console.log('llega el mensaje');
     let transaccion = new Transaccion(
         {
             idComercio:req.body.idComercio,

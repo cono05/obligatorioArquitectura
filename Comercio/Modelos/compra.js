@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const compraSchema = mongoose.Schema({
+const compSchema = mongoose.Schema({
     //id: mongoose.Schema.Types.ObjectId,
     calleEnvio: {type: String, required: true},
     numeroDePuertaEnvio: {type: String, required: true},
@@ -14,7 +14,8 @@ const compraSchema = mongoose.Schema({
     //nombreTitularTarjeta: {type: String, required: true},
     nombreProducto: String,
     cantidadProducto: String,
-    categoria: String,   
+    categoria: String,  
+    estado:String 
 });
 
-module.exports = mongoose.model('Compra', compraSchema);
+module.exports = mongoose.model('Comp', compSchema);

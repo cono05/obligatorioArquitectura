@@ -1,6 +1,7 @@
 const Transaccion = require('../Modelos/transaccion');
 
 exports.registrarTransaccion = function(req, res){
+    
     let transaccion = new Transaccion(
         {
             idTarjeta: req.body.Tarjeta.idTarjeta,

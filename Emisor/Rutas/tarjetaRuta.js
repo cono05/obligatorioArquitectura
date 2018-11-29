@@ -1,15 +1,15 @@
 const express = require('express');
-const router = express.Router();
+const routerTarjeta = express.Router();
 
 const controladorTarjeta = require('../Controladores/controladorTarjeta');
 
 
-router.get('/test' , controladorTarjeta.test);
+routerTarjeta.get('/test' , controladorTarjeta.test);
 
-router.post('/emitirTarjeta' , controladorTarjeta.emitirTarjeta);
-router.post('/:id/agregarTransaccion' , controladorTarjeta.agregarTransaccionEnTarjeta );
+routerTarjeta.post('/emitirTarjeta' , controladorTarjeta.emitirTarjeta);
+routerTarjeta.post('/:id/agregarTransaccion' , controladorTarjeta.agregarTransaccionEnTarjeta );
 
-router.get('/:id' , controladorTarjeta.obtenerDetallesTarjeta);
+routerTarjeta.get('/:id' , controladorTarjeta.obtenerDetallesTarjeta);
 
-module.exports = router;
+module.exports = routerTarjeta;
 

@@ -15,16 +15,11 @@ exports.emitirTarjeta = function(req, res){
         limiteDeCredito: req.body.limiteDeCredito
     });
     tarjeta.save(function(err){
-    
-    
-
     if(err){
         return next(err)
-    }
-    
-    //request.post() aca hacer el reques.pos a la red para que registre en el emisor la tarjeta,
+    }        
+    //request.post() aca hacer el request.pos a la red para que registre en el emisor la tarjeta,
     //para eso tengo q tener en la red una bd con los emisores y cada emisor con sus tarjetas
-
     res.send('Tarjeta emitida correctamente')
     })
     
@@ -40,10 +35,10 @@ exports.obtenerDetallesTarjeta = function(req, res) {
 }
 
 exports.agregarTransaccionEnTarjeta = function(req, res){
-    Tarjeta.findById(req.params.id, function(err, tarjeta){
+    Tarjeta.findOne({numeroDeCuentaPrincipal:req.body.numeroTarjeta}, function(err, tarjeta){
         tarjeta.transacciones.push(req.body);
         let transaccionNueva = new Transaccion({
-            idTarjeta: req.params.id,
+            numeroTarjeta: req.body.numeroTarjeta,
             dia: req.body.dia,
             mes: req.body.mes,
             anio: req.body.anio,
@@ -56,7 +51,7 @@ exports.agregarTransaccionEnTarjeta = function(req, res){
             }
         })  
         tarjeta.save(err2 => {
-            res.status(200).send("transaccion agregada en tarjeta correctamente");
+            res.status(200).send("Transaccion agregada en tarjeta correctamente");
         })             
     })    
 }
