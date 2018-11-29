@@ -1,10 +1,9 @@
 const Transaccion = require('../Modelos/transaccion');
-
+const TarjetaRed = require('../Modelos/tarjetaRed');
 exports.test = function(req, res){
     console.log('llamada recibida');
 }
 exports.registrarTransaccion = function(req, res){
-    console.log('llega el mensaje');
     let transaccion = new Transaccion(
         {
             idComercio:req.body.idComercio,
@@ -33,4 +32,13 @@ exports.obtenerTransaccionesDeComercio = function(req, res){
         }
         res.status(200).send(resp);
     });
+}
+
+exports.identificarRedDeTarjeta = function(req,res){
+    TarjetaRed.findOne({tarjeta:req.body.tarjeta} , (err, resp)=>{
+        if(err){
+            res.status(404).send('no se encuentra la tarjeta');
+        }
+        res.status(200).send(resp);
+    })
 }
